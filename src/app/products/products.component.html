@@ -11,6 +11,6 @@
 
 <!-- Example Structural Directives  *ngIf and *ngFor -->
 <ul>
-  <li *ngFor = "let prod of products">{{prod}}</li>
+  <li *ngFor = "let prod of products">** {{prod}}</li>
 </ul>
-<app-product (productClicked) = "onRemovedProduct(prod)" *ngFor="let prod of products" [productName]="prod"> -- {{prod}}</app-product>
+<app-product (productClicked) = "onRemovedProduct(prod)" *ngFor="let prod of products" [productName]="prod">{{prod}}</app-product>
