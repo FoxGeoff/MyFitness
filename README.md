@@ -2,26 +2,40 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
-## Development server
+## Work log
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Binding
 
-## Code scaffolding
+* String interperlation: {{}}
+* Event binding: `<button (click ="myClick()")>test</button>`
+* Property binding: every html element has a DOM element = JS Object with properties  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+      `[disabled] = "isDisabled"` 
 
-## Build
+* Two way binding: `<input type="text" [(ngModel)] = "productName"></input>`
+* NOTE: this requires: `import {FormsModule} from '@angular/forms';`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Directives
 
-## Running unit tests
+* Structural Directives:
+* `<li *ngFor= "let product of products"> {{product.name}} </li>`
+* `<button *ngIf ="!isDisabled">Test</button>`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Custom Property and Event Binding
 
-## Running end-to-end tests
+## @Input()
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Child Component => Parent Component:
+* On the parent component:
+* `<app-product *ngFor="let prod of products" [productName]= "prod.name"> </app-product>`
+* Child (recieve data): `@input() productName: string;`
 
-## Further help
+## @Output()
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Parent Component => Child Component:
+* Child: `<button (clicked) = "onClicked()">Raise Event</button>`
+* Child (output data): 'import { EventEmitter, Output }`
+* Child (emit event from child out to parent): `@Output() prodctClick = new EventEmitter();`
+* Parent: `onClicked() { this.productClicked.emit(); }`
+* Parent: `<app-product (productClicked) = "onRemovalProduct(product) *ngFor="let product of products"></app-product>`
+* Child: `onRemoveProduct(productName:string){ this.products = this.products.filter(p => p !== productName); }`
