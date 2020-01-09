@@ -22,6 +22,10 @@ export class ProductsComponent implements OnInit {
     }, 3000);
   }
 
+  onRemovedProduct(productName: string) {
+    this.products = this.products.filter(p => p !== productName);
+  }
+
   addProducts() {
     this.products.push(this.productName);
   }
