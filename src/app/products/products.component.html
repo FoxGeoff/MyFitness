@@ -1,6 +1,12 @@
 <h1>My Products</h1>
-
+<!--  Example Two Way Binding. Requires ngFormsModule -->
 <input type="text" [(ngModel)]="productName">
+ <!--  Example Event Binding -->                 <!--  Example Property Binding -->
 <button (click) = "productName='A clicked Tree'" [disabled]="isDisabled">Change Name</button>
-
+<!--  String Interpolation -->
 <div>{{productName}}</div>
+
+<!-- Example Structural Directives  *ngIf and *ngFor -->
+<ul>
+  <li *ngFor = "let prod of products">{{prod}}</li>
+</ul>

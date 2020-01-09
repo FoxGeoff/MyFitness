@@ -9,6 +9,7 @@ export class ProductsComponent implements OnInit {
 
   productName: string;
   isDisabled = true;
+  products = ['A book', 'A tree'];
 
   constructor() { }
 
