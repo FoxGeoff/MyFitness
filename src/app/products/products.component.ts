@@ -21,4 +21,8 @@ export class ProductsComponent implements OnInit {
         this.isDisabled = false;
     }, 3000);
   }
+
+  addProducts() {
+    this.products.push(this.productName);
+  }
 }
