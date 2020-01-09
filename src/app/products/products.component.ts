@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit {
     this.productName = 'A book';
 
     setTimeout( () => {
-        this.productName = 'A tree';
+        this.productName = 'A 3 second tree';
         this.isDisabled = false;
     }, 3000);
   }
