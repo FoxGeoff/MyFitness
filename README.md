@@ -39,3 +39,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Parent: `onClicked() { this.productClicked.emit(); }`
 * Parent: `<app-product (productClicked) = "onRemovalProduct(product) *ngFor="let product of products"></app-product>`
 * Child: `onRemoveProduct(productName:string){ this.products = this.products.filter(p => p !== productName); }`
+
+## Angular Material
+
+New section.
